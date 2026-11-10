@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jainam Jain | Tech Internship Outreach Command Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <!-- Header & Profile Card -->
+    <header class="header-card">
+      <div class="profile-section">
+        <div class="avatar-badge">JJ</div>
+        <div class="profile-info">
+          <h1>
+            Jainam Jain
+            <span style="font-size: 14px; font-weight: 500; color: var(--text-dim);">• Outreach Command Center</span>
+          </h1>
+          <div class="profile-meta">
+            <span class="meta-pill highlight">🎓 TCET Mumbai (CGPA: 9.92 / 10)</span>
+            <span class="meta-pill">💻 B.Tech IT + Minor in AI</span>
+            <span class="meta-pill">📍 Mumbai & Global Remote</span>
+            <span class="meta-pill">⚡ 1+ Yr Exp (Full Stack & GenAI)</span>
+            <a href="https://github.com/jain44" target="_blank" rel="noopener" class="meta-pill highlight" style="text-decoration: none;">🐙 GitHub: github.com/jain44</a>
+            <span class="meta-pill">📱 +91 79779 63474</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div id="engineStatus" class="engine-status-badge">
+          <span class="pulse-dot"></span>
+          <span id="engineStatusText">Checking Engine Status...</span>
+        </div>
+
+        <button id="remindersBtn" class="btn-primary" style="background: linear-gradient(135deg, #f59e0b, #d97706); border: none; display: inline-flex; align-items: center; gap: 6px;" onclick="triggerReminders()" title="Send 3-Day Follow-Up Reminders">
+          ⏰ Follow-Ups <span id="countDueReminders" style="background: rgba(0,0,0,0.3); padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700;">0</span>
+        </button>
+
+        <a href="https://github.com/jain44" target="_blank" rel="noopener" class="btn-icon" title="View GitHub Profile">
+          🐙 GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/jainam-jain-746188263" target="_blank" rel="noopener" class="btn-icon" title="View LinkedIn Profile">
+          💼 LinkedIn
+        </a>
+
+        <button id="autoRefreshToggle" class="meta-pill highlight" style="cursor: pointer;">
+          ⚡ Auto-Sync: ON (5s)
+        </button>
+
+        <button id="refreshBtn" class="btn-primary" title="Refresh Live Data">
+          🔄 Refresh
+        </button>
+      </div>
+    </header>
+
+    <!-- Top KPI Metrics Grid -->
+    <section class="metrics-grid">
+      <!-- Total Leads -->
+      <div class="metric-card card-leads">
+        <div class="metric-header">
+          <span class="metric-title">Discovered Leads</span>
+          <div class="metric-icon-box">🎯</div>
+        </div>
+        <div class="metric-value" id="metricLeads">-</div>
+        <div class="metric-subtext">
+          <span class="badge-trend" style="background: rgba(6, 182, 212, 0.15); color: var(--cyan-light);">100% Verified</span>
+          <span>From recruiter posts</span>
+        </div>
+      </div>
+
+      <!-- Delivered Emails -->
+      <div class="metric-card card-sent">
+        <div class="metric-header">
+          <span class="metric-title">Emails Delivered</span>
+          <div class="metric-icon-box">📬</div>
+        </div>
+        <div class="metric-value" id="metricSent">-</div>
+        <div class="metric-subtext">
+          <span class="badge-trend" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald-light);">100% Inbox Rate</span>
+          <span>0 Bounces</span>
+        </div>
+      </div>
+
+      <!-- Saved Posts -->
+      <div class="metric-card card-commented">
+        <div class="metric-header">
+          <span class="metric-title">Saved Posts</span>
+          <div class="metric-icon-box">📌</div>
+        </div>
+        <div class="metric-value" id="metricCommented">-</div>
+        <div class="metric-subtext">
+          <span class="badge-trend" style="background: rgba(99, 102, 241, 0.15); color: var(--primary-light);">For Review</span>
+          <span>Feed posts to check</span>
+        </div>
+      </div>
+
+      <!-- Application Links / Google Forms -->
+      <div class="metric-card card-forms">
+        <div class="metric-header">
+          <span class="metric-title">Forms & Apply Links</span>
+          <div class="metric-icon-box">📋</div>
+        </div>
+        <div class="metric-value" id="metricForms">-</div>
+        <div class="metric-subtext">
+          <span class="badge-trend" style="background: rgba(245, 158, 11, 0.15); color: var(--amber-light);">Google Forms</span>
+          <span>Direct portals tracked</span>
+        </div>
+      </div>
+
+      <!-- Ready for Outreach -->
+      <div class="metric-card card-pending">
+        <div class="metric-header">
+          <span class="metric-title">Pending Outreach</span>
+          <div class="metric-icon-box">⚡</div>
+        </div>
+        <div class="metric-value" id="metricPending">-</div>
+        <div class="metric-subtext">
+          <span class="badge-trend" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;">Queued Leads</span>
+          <span>Ready to send</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls & Global Search Bar -->
+    <div class="controls-bar">
+      <div class="search-box-wrapper">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by recruiter, email, company, role, or keywords...">
+      </div>
+
+      <div class="filter-pills">
+        <button class="filter-pill active" data-filter="all">All Roles</button>
+        <button class="filter-pill" data-filter="genai">GenAI & LLM</button>
+        <button class="filter-pill" data-filter="fullstack">Full Stack</button>
+        <button class="filter-pill" data-filter="backend">Backend & Python</button>
+        <button class="filter-pill" data-filter="pending">Pending Leads</button>
+        <button class="filter-pill" data-filter="sent">Sent Log</button>
+      </div>
+
+      <div style="font-size: 12px; color: var(--text-dim);">
+        Synced: <span id="lastSyncTime" style="font-family: var(--font-mono); color: var(--text-muted);">-</span>
+      </div>
+    </div>
+
+    <!-- Tab Navigation -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" data-tab="sent">
+        📬 Sent Outreach Log
+        <span class="tab-count" id="countSent">0</span>
+      </button>
+
+      <button class="tab-btn" data-tab="leads">
+        🎯 Discovered Leads
+        <span class="tab-count" id="countLeads">0</span>
+      </button>
+
+      <button class="tab-btn" data-tab="commented">
+        📌 Saved Posts for Review
+        <span class="tab-count" id="countCommented">0</span>
+      </button>
+
+      <button class="tab-btn" data-tab="forms">
+        📋 Forms & Application Links
+        <span class="tab-count" id="countForms">0</span>
+      </button>
+
+      <button class="tab-btn" data-tab="dispatcher">
+        ⚡ Direct Mail Dispatcher
+        <span class="tab-count" style="background: rgba(99, 102, 241, 0.25); color: var(--primary-light);">NEW</span>
+      </button>
+
+      <button class="tab-btn" data-tab="logs">
+        📜 Live Engine Stream
+        <span class="tab-count" id="countLogs">0</span>
+      </button>
+    </nav>
+
+    <!-- TAB 1: Sent Emails -->
+    <div id="tab-sent" class="tab-content active">
+      <div class="table-card">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Recruiter & Contact</th>
+                <th>Target Role</th>
+                <th>Subject Line</th>
+                <th>Delivered At</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tbodySent">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: Discovered Leads -->
+    <div id="tab-leads" class="tab-content">
+      <div class="table-card">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Recruiter / Author</th>
+                <th>Contact (Email / Phone / WhatsApp)</th>
+                <th>Target Role</th>
+                <th>Match Score</th>
+                <th>Discovered</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyLeads">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: Auto-Commented Posts -->
+    <div id="tab-commented" class="tab-content">
+      <div id="gridCommented" class="card-list-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- TAB 4: Application Links & Forms -->
+    <div id="tab-forms" class="tab-content">
+      <div id="gridForms" class="card-list-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- TAB 5: Direct Mail Dispatcher -->
+    <div id="tab-dispatcher" class="tab-content">
+      <div class="dispatcher-container">
+        
+        <!-- Left: Form -->
+        <div class="dispatcher-form-card">
+          <div class="dispatcher-header">
+            <div>
+              <h2 style="font-size: 20px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">⚡ Direct Mail Dispatcher</h2>
+              <p class="dispatcher-sub" style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">Found a recruiter email on an application portal or job post? Paste it here to auto-craft and dispatch a tailored cold application with your 1-page resume attached.</p>
+            </div>
+            <span class="badge-trend" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald-light); height: fit-content; white-space: nowrap;">1-Click Send</span>
+          </div>
+
+          <div class="dispatcher-form-group">
+            <label class="dispatcher-label">
+              <span>🎯 Recruiter / Contact Email <strong style="color: var(--rose);">*</strong></span>
+              <span style="font-size: 11px; color: var(--text-dim);">Required</span>
+            </label>
+            <div class="dispatcher-input-group">
+              <input type="email" id="dispEmail" class="dispatcher-input highlight-input" placeholder="e.g. anantbisht.ai@gmail.com or hr@company.com" required>
+              <button type="button" id="dispPasteBtn" class="btn-sm-action">📋 Paste</button>
+            </div>
+          </div>
+
+          <div class="dispatcher-form-group">
+            <label class="dispatcher-label">
+              <span>📋 Link from Discovered Opportunities</span>
+              <span style="font-size: 11px; color: var(--text-dim);">(Optional - auto-fills below)</span>
+            </label>
+            <select id="dispOppSelect" class="dispatcher-select">
+              <option value="">-- Select an opportunity to auto-fill or type below --</option>
+            </select>
+          </div>
+
+          <div class="dispatcher-row-2">
+            <div class="dispatcher-form-group">
+              <label class="dispatcher-label">Company Name</label>
+              <input type="text" id="dispCompany" class="dispatcher-input" placeholder="e.g. Nexolv AI">
+            </div>
+            <div class="dispatcher-form-group">
+              <label class="dispatcher-label">Target Role</label>
+              <input type="text" id="dispRole" class="dispatcher-input" placeholder="e.g. Applied AI Engineer Intern">
+            </div>
+          </div>
+
+          <div class="dispatcher-form-group">
+            <label class="dispatcher-label">Tech Stack & Key Requirements</label>
+            <textarea id="dispRequirements" class="dispatcher-textarea" rows="2" placeholder="e.g. Python, FastAPI, PostgreSQL, MongoDB, TypeScript, AI"></textarea>
+          </div>
+
+          <div class="dispatcher-form-group">
+            <label class="dispatcher-label">Job Description / Overview</label>
+            <textarea id="dispOverview" class="dispatcher-textarea" rows="2" placeholder="e.g. Hiring Applied AI Engineer Intern. Remote India. Stipend: ₹4,000–₹10,000/mo."></textarea>
+          </div>
+
+          <div class="dispatcher-row-2">
+            <div class="dispatcher-form-group">
+              <label class="dispatcher-label">Portal / Application Link</label>
+              <input type="url" id="dispApplyLink" class="dispatcher-input" placeholder="e.g. https://nexolvai.com">
+            </div>
+            <div class="dispatcher-form-group">
+              <label class="dispatcher-label">Custom Subject Line (Optional)</label>
+              <input type="text" id="dispSubject" class="dispatcher-input" placeholder="Leave blank for auto-generated high-converting subject">
+            </div>
+          </div>
+
+          <div class="dispatcher-actions">
+            <button type="button" id="dispPreviewBtn" class="btn-secondary">
+              👁️ Live Preview
+            </button>
+            <button type="button" id="dispSendBtn" class="btn-primary highlight-btn">
+              🚀 Dispatch Tailored Email + Resume
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Live Preview Panel -->
+        <div class="dispatcher-preview-card">
+          <div class="preview-header">
+            <span class="preview-title" style="font-weight: 600; font-size: 14px;">Live Email Preview</span>
+            <span id="dispResumeBadge" class="meta-pill highlight" style="font-size: 11px;">📄 Resume Attached</span>
+          </div>
+          <div class="preview-subject-bar">
+            <strong>Subject:</strong> <span id="dispPreviewSubject" style="color: var(--cyan-light);">Fill email & role to preview subject</span>
+          </div>
+          <div class="preview-frame-container">
+            <iframe id="dispPreviewFrame" class="preview-iframe" srcdoc="<p style='color: #64748b; font-family: sans-serif; padding: 20px; text-align: center;'>Live rendered HTML email preview will appear here...</p>"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 6: Live Terminal Stream -->
+    <div id="tab-logs" class="tab-content">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+          </div>
+          <span class="terminal-title">internship_automation.log • Live Engine Tail</span>
+        </div>
+        <div class="terminal-body" id="terminalLogs">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Email Preview Modal -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Outreach Email Preview</h3>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="modalPreviewContent" class="modal-preview-frame">
+          <!-- Rendered HTML Email -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

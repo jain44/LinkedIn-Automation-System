@@ -1,0 +1,112 @@
+{
+  "full_name": "Jainam Jain",
+  "name": "Jainam",
+  "title": "Full Stack & GenAI Developer Intern",
+  "email": "jainamjain1116@gmail.com",
+  "phone": "+91 79779 63474",
+  "linkedin": "https://www.linkedin.com/in/jainam-jain-746188263",
+  "github": "https://github.com/jain44",
+  "current_location": "Mumbai, India",
+  "location": "Mumbai, India",
+  "preferred_location": "Remote / Mumbai Hybrid",
+  "open_to_relocate": "Open to Remote Globally (US/EU/APAC) & Mumbai Hybrid",
+  "work_authorization": "Indian National | Available for Global Remote Internship via Deel/Wise or Direct",
+  "availability": "Immediate - Full-time or Part-time",
+  "total_experience": "1+ Year (3 internships + 2 live production roles)",
+  "cgpa": "9.92 / 10",
+  "college": "Thakur College of Engineering and Technology (TCET), Mumbai",
+  "degree": "B.Tech IT + Minor in AI, 2024-2028",
+  "rate": "Paid Internship Only",
+  "domain": "Full Stack Web Development, GenAI / LLM Engineering, Python Automation",
+  "skills": [
+    "JavaScript", "TypeScript", "Python", "SQL", "React", "Next.js", "Node.js", "Express",
+    "FastAPI", "MongoDB", "PostgreSQL", "Prisma", "Firebase", "Supabase", "Docker", "Git",
+    "LangGraph", "LLM Agents", "Groq Llama 3.3", "OpenAI API", "REST APIs", "TailwindCSS"
+  ],
+  "key_projects": [
+    "Financial Crime Investigation Agent - LangGraph multi-agent orchestration system - https://github.com/jain44/Financial-Crime-Investigation-Agent",
+    "GrowthOS - AI SaaS platform with 7 parallel autonomous agents (Next.js 14/15, Supabase, Groq) - https://github.com/jain44/GrowthhOs",
+    "Kavach (Sentinel) - MSME default prediction engine (XGBoost, FastAPI, React, Docker) - AUC-ROC 0.743 - https://github.com/jain44/kavach",
+    "JusticeAI - Multilingual legal co-pilot (Groq Llama 3.3, Node.js, Firebase, PWA) - https://github.com/jain44/JusticeAI",
+    "Samyak - Jain spiritual learning platform (Next.js, React 19, TypeScript, Supabase, Tailwind CSS) - https://github.com/jain44/samyak"
+  ],
+  "top_projects": [
+    {
+      "name": "Financial Crime Investigation Agent",
+      "url": "https://github.com/jain44/Financial-Crime-Investigation-Agent",
+      "description": "LangGraph multi-agent orchestration system for financial crime investigation",
+      "tech_stack": ["Python", "LangGraph", "FastAPI", "SQL", "LLM Agents"]
+    },
+    {
+      "name": "GrowthOS",
+      "url": "https://github.com/jain44/GrowthhOs",
+      "description": "AI SaaS platform with 7 parallel autonomous agents",
+      "tech_stack": ["Next.js 14", "TypeScript", "React", "PostgreSQL", "Prisma", "Groq"]
+    },
+    {
+      "name": "Kavach (Sentinel)",
+      "url": "https://github.com/jain44/kavach",
+      "description": "ML-based MSME credit default risk prediction engine (AUC 0.74)",
+      "tech_stack": ["Python", "FastAPI", "XGBoost", "React", "Docker"]
+    },
+    {
+      "name": "JusticeAI",
+      "url": "https://github.com/jain44/JusticeAI",
+      "description": "Multilingual legal co-pilot (Groq Llama 3.3, Node.js, Firebase, PWA)",
+      "tech_stack": ["React", "Node.js", "Express", "Groq Llama 3.3", "Firebase", "PWA"]
+    },
+    {
+      "name": "Samyak",
+      "url": "https://github.com/jain44/samyak",
+      "description": "Jain spiritual learning & educational web application",
+      "tech_stack": ["Next.js", "React 19", "TypeScript", "Supabase", "Tailwind CSS"]
+    }
+  ],
+  "achievements": [
+    "18th of 1,200+ participants — ELEVATE 2026 (Ideakode)",
+    "26th of 1,300+ participants — Frontend Wars 2026 (Frontend Arena)",
+    "Team Leader — ISRO Bharatiya Antariksh Hackathon 2026",
+    "Offline finalist — Saavishkar 2026 (MPSTME, SVKM's NMIMS)",
+    "Round 2 (top ~400 teams) — Adobe University Hackathon 2026",
+    "Interview Round — DevFusion 3.0 (Enginow × IIT Bombay)",
+    "ACM India Outstanding Chapter Website Awards 2025 Honourable Mention"
+  ],
+  "resume_drive_link": "https://drive.google.com/file/d/1K_q0i7hr_CFEbV4ec5Y3pS_ts-fLi5zs/view?usp=drivesdk",
+  "search_keywords": [
+    "send resume software intern hiring",
+    "send resume full stack intern hiring",
+    "send resume react developer intern",
+    "send resume node.js intern hiring",
+    "send resume python intern hiring",
+    "send resume AI intern hiring",
+    "send resume javascript intern hiring",
+    "send resume frontend developer intern",
+    "send resume backend developer intern",
+    "send resume next.js intern",
+    "hiring software intern email resume",
+    "hiring full stack intern email resume",
+    "hiring developer intern send cv",
+    "internship opening developer send cv email",
+    "internship opening full stack send resume",
+    "internship opening react send resume",
+    "internship developer apply email resume",
+    "tech internship hiring send resume",
+    "software developer intern apply email",
+    "full stack developer intern apply email",
+    "AI intern hiring send resume",
+    "GenAI intern hiring apply",
+    "developer intern remote paid apply email",
+    "software intern stipend remote apply",
+    "hiring intern email your cv developer",
+    "open internship software developer email",
+    "open internship full stack email cv",
+    "intern react next.js hiring send resume",
+    "intern python django flask hiring email",
+    "web developer intern hiring send cv"
+  ],
+  "resumes": {
+    "primary": "Jainam_Jain_1Page.pdf",
+    "detailed": "Jainam_Jain_2Page.pdf",
+    "drive_link": "https://drive.google.com/file/d/1K_q0i7hr_CFEbV4ec5Y3pS_ts-fLi5zs/view?usp=drivesdk"
+  }
+}
